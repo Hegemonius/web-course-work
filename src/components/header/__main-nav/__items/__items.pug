@@ -1,0 +1,26 @@
+
+
+
+mixin __items
+
+    -
+        let nav = {
+            items: {
+                "О нас": false,
+                "Услуги": true,
+                "Вакансии": false,
+                "Новости": false,
+                "Соглашения": true
+            }
+
+        }
+
+    ul(class="main-nav__items")
+        each item_val, item_key in nav.items
+            if item_val === false
+                li(class="main-nav__item"): a(class="item__link" href="/mock-address/change-me")= item_key
+            else
+                li(class="main-nav__item")
+                    div(class="main-nav__item_expand")
+                        a(class="item__link" href="/mock-address/change-me")= item_key
+                        img(class="item__expand-img" src="images/expand_more_gray.svg" alt="Развернуть")

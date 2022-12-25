@@ -1,0 +1,19 @@
+doctype html
+
+include ../../assets/pug/layout
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/search-room-page-content/search-room-page-content
+
+
+block meta
+    title Комната поиска
+
+block header
+    +header()
+
+block content
+    +search-room-page-content()
+
+block footer
+    +footer()

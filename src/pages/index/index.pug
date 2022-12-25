@@ -1,0 +1,18 @@
+include ../../assets/pug/layout
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/landing-page-content/landing-page-content
+
+doctype html
+
+block meta
+    title Главная страница
+
+block header
+    +header()
+
+block content
+    +lading-page-content()
+
+block footer
+    +footer()

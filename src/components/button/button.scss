@@ -1,0 +1,44 @@
+@import "../../assets/scss/_vars.scss";
+
+.button {
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  height: 44px;
+  width: 100%;
+  border-radius: 22px;
+  padding: 15px 20px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &_default {
+    color: $purple;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 0;
+    height: 100%;
+  }
+
+  &_dark {
+    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+  }
+
+  &_light {
+    padding: 13px 18px;
+    background-color: #ffffff;
+    border: 2px solid;
+    color: $purple;
+
+  }
+  &_arrow {
+    background-image: url("../../assets/images/arrow_forward_white.svg"), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-repeat: no-repeat;
+    background-position: right 13px center, 0 0;
+  }
+}

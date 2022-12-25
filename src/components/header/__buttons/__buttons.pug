@@ -1,0 +1,8 @@
+include ../../button/button
+doctype html
+
+
+mixin header__buttons
+    div(class='header__buttons')
+        div(class='header__button'): +button({ class: 'button__log', theme: 'light', name: 'Войти'})
+        div(class='header__button'): +button({ class: 'button__reg', theme: 'dark', name: 'Зарегистрироваться'})

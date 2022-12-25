@@ -1,0 +1,37 @@
+
+
+include ../rate-button/rate-button
+include ../carousel-slider/carousel-slider
+
+mixin room(attr={})
+
+    -
+        const roomClass = attr.class ? attr.class : ''
+        const roomLink = attr.roomLink ? attr.roomLink : '/change-me'
+        const roomNumber = attr.roomNumber ? attr.roomNumber : ''
+        const roomImgSrc = attr.imgSrc ? attr.imgSrc : `images/rooms-images/room_${roomNumber}.svg`
+        const roomIsLux = attr.isLux ? attr.isLux : ''
+        const roomPrice = attr.price ? attr.price : ''
+        const roomReviewsAmount = attr.reviewsAmount ? attr.reviewsAmount : ''
+        const roomRateIsStatic = attr.rateIsStatic
+        const roomRateStarsValue = attr.starsValue && attr.rateIsStatic ? attr.starsValue : ''
+
+
+    div.room(class=roomClass)
+        +carousel-slider({roomNumber: roomNumber,
+                            images: [`room_${roomNumber}`, `room_${roomNumber}`, `room_${roomNumber}`, `room_${roomNumber}`]})
+        div.room__info
+            div.info__number-and-price
+                a.room__link(href=roomLink): div.info__room-number
+                   span.room-number__number-sign= '№ '
+                   spam.room-number__value= roomNumber
+                   if(attr.isLux)
+                      span(class=`room__is-lux`) люкс
+                div.info__room-price
+                    span.room-price__value= roomPrice + '₽'
+                    spam.room-price__text= ' в сутки'
+            div.info__room-evaluation
+                +rate-button({class: `room__rate-button`, isStatic: roomRateIsStatic, value: roomRateStarsValue})
+                div.info__reviews-amount
+                    span.reviews-amount__value= roomReviewsAmount
+                    span.reviews-amount__text= ' отзывов'

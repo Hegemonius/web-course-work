@@ -1,0 +1,42 @@
+@import "~normalize.css";
+@import "./_vars.scss ";
+@import "./_fonts.scss";
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  height: 100%;
+  background-color: #ffffff;
+  color: rgba($main-color, 0.75)
+}
+
+h1 {
+  line-height: 29px;
+  font-weight: bold;
+  font-size: 24px;
+  color: $main-color;
+}
+
+h2 {
+  line-height: 23px;
+  font-weight: bold;
+  font-size: 19px;
+  color: $main-color;
+}
+
+h3 {
+  text-transform: uppercase;
+  line-height: 15px;
+  font-weight: bold;
+  font-size: 12px;
+  color: $main-color;
+}
